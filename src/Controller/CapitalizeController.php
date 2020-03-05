@@ -2,13 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Capitalize;
+use App\Entity\Dash;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
-interface transform
-{
-    public function stringTransform($string) :string ;
-}
 
 class CapitalizeController extends AbstractController
 {
@@ -17,8 +14,14 @@ class CapitalizeController extends AbstractController
      */
     public function index()
     {
+        $capitalize = new Capitalize();
+        $dash = new Dash();
+
+        $stringToCapitalize = $capitalize->stringTransform('what is up');
+        $stringToDash = $dash->stringTransform('what is up');
+
         return $this->render('capitalize/index.html.twig', [
-            'controller_name' => 'CapitalizeController',
+            'stringToCaps' => $stringToCapitalize, 'stringToDash' => $stringToDash,
         ]);
     }
 }

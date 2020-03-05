@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Controller\transform;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +23,16 @@ class Capitalize implements transform
 
     public function stringTransform($string): string
     {
-        // TODO: Implement stringTransform() method.
+        $string = strtolower($string);
+
+        for ($i = 0; $i < strlen($string); $i++) {
+            if ($i % 2 == 0) {
+                $string{$i} = strtoupper($string{$i});
+                continue;
+            } else {
+                continue;
+            }
+        }
+        return $string;
     }
 }
