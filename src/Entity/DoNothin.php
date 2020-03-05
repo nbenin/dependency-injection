@@ -3,10 +3,12 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-class Dash implements transform
+
+class DoNothin implements transform
 {
+
     public static function stringTransform($string): string
     {
-        return str_replace(' ', '-', $string);
+        return 'Enter some Text';
     }
 }

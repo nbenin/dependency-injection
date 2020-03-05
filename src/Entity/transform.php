@@ -5,5 +5,5 @@ namespace App\Entity;
 
 interface transform
 {
-    public function stringTransform($string) :string ;
+    public static function stringTransform($string) :string ;
 }
