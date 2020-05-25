@@ -1,3 +1,4 @@
 # Dependency Injection
 
-- Practicing dependency injections
+- Learning about Dependency Injections
+- Touch concept but helps with the cleanliness of code
